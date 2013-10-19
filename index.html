@@ -1,0 +1,35 @@
+<script type="application/processing">
+ void setup()
+{
+  String str = "日本語もOK";
+  size(400, 200);
+  textSize(50);
+    background(0);//背景色は黒
+  //一度文字をCanvasに文字を表示する、文字色は白
+  text(str, 10, 50);
+  
+  loadPixels();
+  tmp = new ArrayList(); 
+  //文字色が白のピクセルを取得する
+  for (int i = 0; i < (width*height); i++) {
+      if(pixels[i] == -1){
+        tmp.add(i);
+      }
+  }
+  updatePixels();
+
+  //一度書いた文字列を含め白で上書きする
+  fill(-1);
+  rect(0, 0, width, height);
+  
+  loadPixels();
+   //先ほど取得した、文字に使用したピクセルをCanvasに書きだす
+  for (int i = tmp.size()-1; i >= 0; i--) {
+    j = tmp.get(i);
+     pixels[j]=color(255, 102, 204);    
+  }
+  updatePixels();
+  
+} 
+ </script>
+<canvas id="canvas"></canvas>
