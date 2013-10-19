@@ -15,3 +15,9 @@ http://www.eurekacomputer.jp/recruit.html
 （改行は1文字と数えます）
 
 圧縮したものは３００字未満
+
+##### 動作確認方法
+ min.txtが最小化版
+ processingのIDEを起動して、スケッチをJavascriptにする。  
+ min.txtの内容をコピペして実行
+ 
