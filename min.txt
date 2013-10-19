@@ -1,0 +1,1 @@
+void setup(){w=400;h=200;size(400, 200);textSize(50);text("Hello World\\n",10,50);loadPixels();t=new ArrayList();int i;for(i=0;i<(w*h);i++){if(pixels[i]==-1){t.add(i);}}updatePixels();fill(-1);rect(0,0,w,h);loadPixels();for(i=t.size()-1;i>=0;i--){pixels[t.get(i)]=color(0);}updatePixels();}
